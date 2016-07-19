@@ -22,7 +22,7 @@ make_swap () {
 do_pip () {
     pip install --upgrade pip wheel
     IFS=' ' ; for pkg in numpy scipy scikit-learn; do
-        pip install --use-wheel $pkg
+        pip install --no-binary :all: $pkg
     done
 }
 
